@@ -38,6 +38,9 @@ mkdir -p "$HOME"/.kube
 sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
 sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
 
+# Taint control plane
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
 # Install Claico Network Plugin Network 
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml

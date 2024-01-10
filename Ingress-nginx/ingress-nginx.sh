@@ -5,9 +5,8 @@ HELM_REPO=https://kubernetes.github.io/ingress-nginx
 HELM_NAME=ingress-nginx
 HELM_REPONAME=ingress-nginx
 K8SUSER=kubernetes-admin
-#CLUSTER_DOMAIN=sipgwpp-k8s.solusi-k8s.com
 HELM_OPT=" --create-namespace "
-
+#CLUSTER_DOMAIN=sipgwpp-k8s.solusi-k8s.com
 # helm repo add ${HELM_REPONAME} ${HELM_REPO}
 helm repo update
 
