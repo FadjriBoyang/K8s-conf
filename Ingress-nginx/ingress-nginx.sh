@@ -1,16 +1,17 @@
 #!/bin/bash
-K8SCLUSTER=sipgwpp-k8s
+K8SCLUSTER=kubernetes
 HELM_NS=ingress-nginx
 HELM_REPO=https://kubernetes.github.io/ingress-nginx
 HELM_NAME=ingress-nginx
 HELM_REPONAME=ingress-nginx
-CLUSTER_DOMAIN=sipgwpp-k8s.solusi-k8s.com
+K8SUSER=kubernetes-admin
+#CLUSTER_DOMAIN=sipgwpp-k8s.solusi-k8s.com
 HELM_OPT=" --create-namespace "
 
 # helm repo add ${HELM_REPONAME} ${HELM_REPO}
 helm repo update
 
-kubectl config use-context kubernetes-admin@${K8SCLUSTER} || exit
+kubectl config use-context ${K8SUSER}@${K8SCLUSTER} || exit
 
 kubectl get ns ${HELM_NS} || kubectl create ns ${HELM_NS}
 
@@ -18,7 +19,6 @@ kubectl config use-context ${HELM_NS}@${K8SCLUSTER} && \
 helm upgrade --install ${HELM_NAME} ${HELM_REPONAME} \
   --repo ${HELM_REPO} \
   --namespace ${HELM_NS}  \
-  --set ingress.annotations."cert-manager\.io/cluster-issuer"="letsencrypt-x-k8s" \
   ${HELM_OPT} \
   --set fullnameOverride="${HELM_NAME}" \
   --set nameOverride="${HELM_NAME}" \
@@ -57,8 +57,9 @@ helm upgrade --install ${HELM_NAME} ${HELM_REPONAME} \
   --set defaultBackend.minAvailable=1 \
   --set rbac.create=true \
   --set serviceAccount.create=true \
-  --values sipgwpp-k8s-values.yaml \
+  --values ingress-value.yaml \
 
+  # --set ingress.annotations."cert-manager\.io/cluster-issuer"="letsencrypt-x-k8s" \
   # --set defaultBackend.image.image=solusik8s/ingress-nginx-backend \
   # --set commonLabels."platform"="myindo" \
   # --set commonLabels."environment"="production" \
