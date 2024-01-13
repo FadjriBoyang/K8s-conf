@@ -16,8 +16,8 @@ controller:
     server-tokens: "false"
     use-gzip: "true"
     use-http2: "true"
-    access-log-path: "/var/log/nginx/access.log"
-    error-log-path: "/var/log/nginx/error.log"
+    #access-log-path: "/var/log/nginx/access.log"
+    #error-log-path: "/var/log/nginx/error.log"
     http-snippet: |
       proxy_cache_path /var/lib/nginx/cache levels=1:2 keys_zone=static-cache:2m max_size=100m inactive=7d use_temp_path=off;
       proxy_cache_key $scheme$proxy_host$request_uri;

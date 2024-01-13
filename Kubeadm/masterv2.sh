@@ -48,3 +48,4 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml -O
 
 kubectl create -f custom-resources.yaml
+# sudo kubeadm init --control-plane-endpoint="$MASTER_PUBLIC_IP" --apiserver-cert-extra-sans="$MASTER_PUBLIC_IP" --pod-network-cidr="10.244.0.0/16" --node-name "$NODENAME" --ignore-preflight-errors Swap --v=5

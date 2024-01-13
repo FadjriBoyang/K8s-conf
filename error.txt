@@ -1,0 +1,15 @@
+Jan 11 09:30:39 master-node kubelet[15453]: I0111 09:30:39.052834   15453 pod_container_deletor.go:80] "Container not found in pod's containers" containerID="ad2859c32057014a5c554faae4208d0a5e5748ea1551cef32059>
+Jan 11 09:30:40 master-node kubelet[15453]: I0111 09:30:40.070360   15453 pod_startup_latency_tracker.go:102] "Observed pod startup duration" pod="kube-system/kube-proxy-5pl45" podStartSLOduration=5.070296857 p>
+Jan 11 09:30:42 master-node kubelet[15453]: E0111 09:30:42.800519   15453 remote_runtime.go:432] "ContainerStatus from runtime service failed" err="rpc error: code = NotFound desc = an error occurred when try t>
+Jan 11 09:30:42 master-node kubelet[15453]: I0111 09:30:42.800698   15453 kuberuntime_gc.go:360] "Error getting ContainerStatus for containerID" containerID="729040bb0c8ed33b18227d3524d352c4aa98315a7cfdea90692a>
+Jan 11 09:30:42 master-node kubelet[15453]: E0111 09:30:42.802018   15453 remote_runtime.go:432] "ContainerStatus from runtime service failed" err="rpc error: code = NotFound desc = an error occurred when try t>
+Jan 11 09:30:42 master-node kubelet[15453]: I0111 09:30:42.802055   15453 kuberuntime_gc.go:360] "Error getting ContainerStatus for containerID" containerID="a9a4dbd06ed819d6793fdf1da5ae3c791c57be04e2a5c18fe78c>
+Jan 11 09:31:42 master-node kubelet[15453]: E0111 09:31:42.814954   15453 kubelet_node_status.go:456] "Node not becoming ready in time after startup"
+Jan 11 09:31:42 master-node kubelet[15453]: E0111 09:31:42.906961   15453 event.go:346] "Server rejected event (will not retry!)" err="rpc error: code = Unknown desc = malformed header: missing HTTP content-typ>
+Jan 11 09:31:42 master-node kubelet[15453]: E0111 09:31:42.992913   15453 kubelet.go:2892] "Container runtime network not ready" networkReady="NetworkReady=false reason:NetworkPluginNotReady message:Network plu>
+Jan 11 09:31:43 master-node kubelet[15453]: I0111 09:31:43.252174   15453 pod_container_deletor.go:80] "Container not found in pod's containers" containerID="24db93e76f8f154973743f88f11916954765b669f03758fcdb09>
+Jan 11 09:31:43 master-node kubelet[15453]: I0111 09:31:43.252238   15453 scope.go:117] "RemoveContainer" containerID="03767861a495475d98be17f2ef8d168e705f57bb464247813ee4804b8fbecbc2"
+Jan 11 09:31:43 master-node kubelet[15453]: E0111 09:31:43.368665   15453 pod_workers.go:1298] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"etcd\" with CrashLoopBackOff: \"back-off 10s >
+Jan 11 09:31:44 master-node kubelet[15453]: I0111 09:31:44.256071   15453 scope.go:117] "RemoveContainer" containerID="187d70f270f311af2fa4419c27f1f624ecb6816ad13daee7be7e3e60880e08bd"
+Jan 11 09:31:44 master-node kubelet[15453]: E0111 09:31:44.256709   15453 pod_workers.go:1298] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"etcd\" with CrashLoopBackOff: \"back-off 10s >
+Jan 11 09:31:47 master-node kubelet[15453]: E0111 09:31:47.993649   15453 kubelet.go:2892] "Container runtime network not ready" networkReady="NetworkReady=false reason:NetworkPluginNotReady message:Network plu>
